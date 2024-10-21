@@ -38,6 +38,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "parallel", "~>1.12.1"
   spec.add_development_dependency "colorize", "~>0.8.1"
 
-  spec.add_dependency 'savon', '~> 2.12.0'
+  spec.add_dependency 'savon', '~> 2.15.0'
   spec.add_dependency 'httparty'
 end
