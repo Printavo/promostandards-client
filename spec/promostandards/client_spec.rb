@@ -8,7 +8,7 @@ RSpec.describe Promostandards::Client do
       product_pricing_and_configuration_service_url: 'https://pspriceconfig100.pcna.online/'
     }
   end
-  let(:ps_client) { PromoStandards::Client.new ps_config }
+  let(:ps_client) { PromoStandards::Client.new **ps_config }
   let(:savon_client) { double('SavonClient') }
 
   before do
@@ -257,7 +257,7 @@ RSpec.describe Promostandards::Client do
 
     it 'raises an exception when the service URL is not available' do
       ps_config[:media_content_service_url] = nil
-      ps_client = PromoStandards::Client.new ps_config
+      ps_client = PromoStandards::Client.new **ps_config
 
       expect do
         ps_client.get_primary_image 'product_id'
